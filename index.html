@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
 <meta charset="utf-8">
-<title>Suporte OVERISE</title>
+<title>Suporte Overise</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +33,7 @@
   /* ---- topo ---- */
   header{display:flex; flex-direction:column; align-items:center; text-align:center; gap:18px}
   .brand{display:inline-flex; align-items:center; gap:9px; font-family:var(--head); font-weight:800;
-    font-size:15px; letter-spacing:3px; color:var(--muted)}
+    font-size:18px; letter-spacing:.2px; color:var(--muted)}
   .brand b{color:var(--text)}
   .brand .dot{width:9px; height:9px; border-radius:50%; background:var(--neon); box-shadow:0 0 12px var(--neon)}
   .eyebrow{display:inline-flex; align-items:center; gap:8px; align-self:center;
@@ -79,6 +79,27 @@
   .agent:hover .a-btn{filter:brightness(1.08)}
   .a-btn svg{width:18px; height:18px}
 
+  /* ---- atendimento especial (JZ) ---- */
+  .special{position:relative; display:flex; flex-direction:column; gap:16px; padding:24px 24px 22px; border-radius:18px;
+    background:linear-gradient(180deg,rgba(0,255,65,.07),var(--card));
+    border:1px solid var(--neon-line); box-shadow:0 24px 54px -32px rgba(0,255,65,.3)}
+  .sp-badge{align-self:flex-start; padding:6px 14px; border-radius:100px; background:var(--neon-dim); border:1px solid var(--neon-line);
+    color:var(--neon); font-family:var(--head); font-weight:700; font-size:11px; letter-spacing:2.5px; text-transform:uppercase}
+  .sp-row{display:flex; align-items:center; gap:18px}
+  .sp-ic{width:54px; height:54px; flex:none; border-radius:15px; display:grid; place-items:center;
+    background:var(--neon-dim); border:1px solid var(--neon-line); color:var(--neon)}
+  .sp-ic svg{width:29px; height:29px}
+  .sp-txt{flex:1; min-width:0}
+  .sp-name{font-family:var(--head); font-weight:700; font-size:1.42rem; line-height:1.1}
+  .sp-desc{color:var(--muted); font-size:.94rem; line-height:1.45; margin:5px 0 9px; max-width:50ch}
+  .sp-num{font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums}
+  .sp-btn{flex:none; display:inline-flex; align-items:center; justify-content:center; gap:9px; padding:13px 24px; border-radius:11px;
+    background:var(--wa); color:var(--wa-ink); font-family:var(--head); font-weight:700; font-size:.92rem; text-decoration:none; transition:filter .18s ease}
+  .sp-btn:hover{filter:brightness(1.08)}
+  .sp-btn:focus-visible{outline:2px solid var(--neon); outline-offset:3px}
+  .sp-btn svg{width:18px; height:18px}
+  @media (max-width:640px){ .sp-row{flex-direction:column; align-items:center; text-align:center} .sp-desc{margin-inline:auto} .sp-btn{width:100%} }
+
   /* ---- rodape ---- */
   footer{display:flex; flex-direction:column; align-items:center; gap:14px; text-align:center;
     padding-top:8px; border-top:1px solid var(--bd)}
@@ -91,14 +112,14 @@
 <body>
 <div class="wrap">
   <header>
-    <div class="brand"><span class="dot"></span><b>OVERISE</b></div>
+    <div class="brand"><span class="dot"></span><b>Overise</b></div>
     <span class="eyebrow">Suporte oficial</span>
     <h1>Fale com o <span>suporte</span></h1>
     <p class="lead">Atendimento humano no WhatsApp. Escolhe um atendente e chama na hora.</p>
   </header>
 
   <main class="team">
-    <a class="agent" href="https://wa.me/559391026080?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20com%20a%20OVERISE." target="_blank" rel="noopener">
+    <a class="agent" href="https://wa.me/559391026080?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20com%20a%20Overise." target="_blank" rel="noopener">
       <div class="a-top">
         <span class="a-ic"><svg viewBox="0 0 24 24" fill="#04140a"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.16c-.24.68-1.42 1.32-1.96 1.36-.5.04-.5.4-3.15-.66-2.66-1.05-4.32-3.76-4.45-3.93-.13-.17-1.06-1.41-1.06-2.69 0-1.28.67-1.91.91-2.17.24-.26.52-.33.7-.33.17 0 .35 0 .5.01.16.01.38-.06.59.45.22.52.74 1.8.8 1.93.07.13.11.28.02.45-.09.17-.13.28-.26.43-.13.15-.28.34-.4.45-.13.13-.27.28-.12.54.15.26.67 1.1 1.44 1.79.99.88 1.82 1.15 2.08 1.28.26.13.41.11.56-.07.15-.17.65-.76.82-1.02.17-.26.35-.22.59-.13.24.09 1.52.72 1.78.85.26.13.43.19.5.3.07.11.07.64-.17 1.32z"/></svg></span>
         <div><div class="a-name">Leo</div><div class="a-role">Atendimento</div></div>
@@ -107,7 +128,7 @@
       <div class="a-btn"><svg viewBox="0 0 24 24" fill="#04140a"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.16c-.24.68-1.42 1.32-1.96 1.36-.5.04-.5.4-3.15-.66-2.66-1.05-4.32-3.76-4.45-3.93-.13-.17-1.06-1.41-1.06-2.69 0-1.28.67-1.91.91-2.17.24-.26.52-.33.7-.33.17 0 .35 0 .5.01.16.01.38-.06.59.45.22.52.74 1.8.8 1.93.07.13.11.28.02.45-.09.17-.13.28-.26.43-.13.15-.28.34-.4.45-.13.13-.27.28-.12.54.15.26.67 1.1 1.44 1.79.99.88 1.82 1.15 2.08 1.28.26.13.41.11.56-.07.15-.17.65-.76.82-1.02.17-.26.35-.22.59-.13.24.09 1.52.72 1.78.85.26.13.43.19.5.3.07.11.07.64-.17 1.32z"/></svg> Chamar no WhatsApp</div>
     </a>
 
-    <a class="agent" href="https://wa.me/5511931500166?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20com%20a%20OVERISE." target="_blank" rel="noopener">
+    <a class="agent" href="https://wa.me/5511931500166?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20com%20a%20Overise." target="_blank" rel="noopener">
       <div class="a-top">
         <span class="a-ic"><svg viewBox="0 0 24 24" fill="#04140a"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.16c-.24.68-1.42 1.32-1.96 1.36-.5.04-.5.4-3.15-.66-2.66-1.05-4.32-3.76-4.45-3.93-.13-.17-1.06-1.41-1.06-2.69 0-1.28.67-1.91.91-2.17.24-.26.52-.33.7-.33.17 0 .35 0 .5.01.16.01.38-.06.59.45.22.52.74 1.8.8 1.93.07.13.11.28.02.45-.09.17-.13.28-.26.43-.13.15-.28.34-.4.45-.13.13-.27.28-.12.54.15.26.67 1.1 1.44 1.79.99.88 1.82 1.15 2.08 1.28.26.13.41.11.56-.07.15-.17.65-.76.82-1.02.17-.26.35-.22.59-.13.24.09 1.52.72 1.78.85.26.13.43.19.5.3.07.11.07.64-.17 1.32z"/></svg></span>
         <div><div class="a-name">Victor</div><div class="a-role">Atendimento</div></div>
@@ -116,7 +137,7 @@
       <div class="a-btn"><svg viewBox="0 0 24 24" fill="#04140a"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.16c-.24.68-1.42 1.32-1.96 1.36-.5.04-.5.4-3.15-.66-2.66-1.05-4.32-3.76-4.45-3.93-.13-.17-1.06-1.41-1.06-2.69 0-1.28.67-1.91.91-2.17.24-.26.52-.33.7-.33.17 0 .35 0 .5.01.16.01.38-.06.59.45.22.52.74 1.8.8 1.93.07.13.11.28.02.45-.09.17-.13.28-.26.43-.13.15-.28.34-.4.45-.13.13-.27.28-.12.54.15.26.67 1.1 1.44 1.79.99.88 1.82 1.15 2.08 1.28.26.13.41.11.56-.07.15-.17.65-.76.82-1.02.17-.26.35-.22.59-.13.24.09 1.52.72 1.78.85.26.13.43.19.5.3.07.11.07.64-.17 1.32z"/></svg> Chamar no WhatsApp</div>
     </a>
 
-    <a class="agent" href="https://wa.me/5568996081689?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20com%20a%20OVERISE." target="_blank" rel="noopener">
+    <a class="agent" href="https://wa.me/5568996081689?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20com%20a%20Overise." target="_blank" rel="noopener">
       <div class="a-top">
         <span class="a-ic"><svg viewBox="0 0 24 24" fill="#04140a"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.16c-.24.68-1.42 1.32-1.96 1.36-.5.04-.5.4-3.15-.66-2.66-1.05-4.32-3.76-4.45-3.93-.13-.17-1.06-1.41-1.06-2.69 0-1.28.67-1.91.91-2.17.24-.26.52-.33.7-.33.17 0 .35 0 .5.01.16.01.38-.06.59.45.22.52.74 1.8.8 1.93.07.13.11.28.02.45-.09.17-.13.28-.26.43-.13.15-.28.34-.4.45-.13.13-.27.28-.12.54.15.26.67 1.1 1.44 1.79.99.88 1.82 1.15 2.08 1.28.26.13.41.11.56-.07.15-.17.65-.76.82-1.02.17-.26.35-.22.59-.13.24.09 1.52.72 1.78.85.26.13.43.19.5.3.07.11.07.64-.17 1.32z"/></svg></span>
         <div><div class="a-name">Wl</div><div class="a-role">Atendimento</div></div>
@@ -125,6 +146,19 @@
       <div class="a-btn"><svg viewBox="0 0 24 24" fill="#04140a"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.16c-.24.68-1.42 1.32-1.96 1.36-.5.04-.5.4-3.15-.66-2.66-1.05-4.32-3.76-4.45-3.93-.13-.17-1.06-1.41-1.06-2.69 0-1.28.67-1.91.91-2.17.24-.26.52-.33.7-.33.17 0 .35 0 .5.01.16.01.38-.06.59.45.22.52.74 1.8.8 1.93.07.13.11.28.02.45-.09.17-.13.28-.26.43-.13.15-.28.34-.4.45-.13.13-.27.28-.12.54.15.26.67 1.1 1.44 1.79.99.88 1.82 1.15 2.08 1.28.26.13.41.11.56-.07.15-.17.65-.76.82-1.02.17-.26.35-.22.59-.13.24.09 1.52.72 1.78.85.26.13.43.19.5.3.07.11.07.64-.17 1.32z"/></svg> Chamar no WhatsApp</div>
     </a>
   </main>
+
+  <section class="special">
+    <span class="sp-badge">Atendimento especial</span>
+    <div class="sp-row">
+      <span class="sp-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21l1.18-6.88-5-4.87 7.1-1.01L12 2z"/></svg></span>
+      <div class="sp-txt">
+        <div class="sp-name">JZ</div>
+        <p class="sp-desc">Quer um jogo específico que ainda não está na Overise? Fala direto com o JZ que a gente adiciona pra você.</p>
+        <div class="sp-num">+55 68 99921-5897</div>
+      </div>
+      <a class="sp-btn" href="https://wa.me/5568999215897?text=Ol%C3%A1%20JZ!%20Quero%20adicionar%20um%20jogo%20espec%C3%ADfico%20na%20Overise." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#04140a"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.16c-.24.68-1.42 1.32-1.96 1.36-.5.04-.5.4-3.15-.66-2.66-1.05-4.32-3.76-4.45-3.93-.13-.17-1.06-1.41-1.06-2.69 0-1.28.67-1.91.91-2.17.24-.26.52-.33.7-.33.17 0 .35 0 .5.01.16.01.38-.06.59.45.22.52.74 1.8.8 1.93.07.13.11.28.02.45-.09.17-.13.28-.26.43-.13.15-.28.34-.4.45-.13.13-.27.28-.12.54.15.26.67 1.1 1.44 1.79.99.88 1.82 1.15 2.08 1.28.26.13.41.11.56-.07.15-.17.65-.76.82-1.02.17-.26.35-.22.59-.13.24.09 1.52.72 1.78.85.26.13.43.19.5.3.07.11.07.64-.17 1.32z"/></svg> Chamar o JZ</a>
+    </div>
+  </section>
 
   <footer>
     <div class="help">
