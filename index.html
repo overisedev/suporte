@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Suporte OVERISE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#070a08; --bg2:#0b100c; --card:#0f140f; --card-hi:#131a13;
+    --bd:#1d2a20; --bd-hi:#2b3d30;
+    --text:#e9f2ec; --muted:#8ea597; --muted2:#5f7268;
+    --neon:#00ff41; --neon-dim:rgba(0,255,65,.14); --neon-line:rgba(0,255,65,.28);
+    --wa:#25d366; --wa-ink:#04140a;
+    --head:'Sora',system-ui,sans-serif; --body:'Inter',system-ui,sans-serif;
+    color-scheme:dark;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:
+      radial-gradient(900px 460px at 50% -8%, rgba(0,255,65,.10), transparent 60%),
+      radial-gradient(600px 400px at 88% 108%, rgba(37,211,102,.07), transparent 55%),
+      var(--bg);
+    color:var(--text); font-family:var(--body);
+    min-height:100vh; line-height:1.5;
+    padding:clamp(28px,6vw,72px) clamp(18px,5vw,24px);
+    display:flex; flex-direction:column; align-items:center;
+  }
+  .wrap{width:100%; max-width:940px; display:flex; flex-direction:column; gap:clamp(30px,5vw,48px)}
+
+  /* ---- topo ---- */
+  header{display:flex; flex-direction:column; align-items:center; text-align:center; gap:18px}
+  .brand{display:inline-flex; align-items:center; gap:9px; font-family:var(--head); font-weight:800;
+    font-size:15px; letter-spacing:3px; color:var(--muted)}
+  .brand b{color:var(--text)}
+  .brand .dot{width:9px; height:9px; border-radius:50%; background:var(--neon); box-shadow:0 0 12px var(--neon)}
+  .eyebrow{display:inline-flex; align-items:center; gap:8px; align-self:center;
+    padding:7px 15px; border:1px solid var(--neon-line); border-radius:100px;
+    background:var(--neon-dim); color:var(--neon);
+    font-family:var(--head); font-weight:700; font-size:11.5px; letter-spacing:2.5px; text-transform:uppercase}
+  h1{font-family:var(--head); font-weight:800; font-size:clamp(2rem,6.5vw,3.1rem); line-height:1.02;
+    letter-spacing:-.02em; text-wrap:balance}
+  h1 span{color:var(--neon)}
+  .lead{color:var(--muted); font-size:clamp(1rem,2.4vw,1.12rem); max-width:34ch; text-wrap:balance}
+
+  /* ---- grade de atendentes ---- */
+  .team{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+  @media (max-width:720px){ .team{grid-template-columns:1fr} }
+
+  .agent{
+    position:relative; display:flex; flex-direction:column; gap:16px;
+    padding:24px 22px 22px; border-radius:18px; text-decoration:none; color:inherit;
+    background:linear-gradient(180deg,var(--card-hi),var(--card));
+    border:1px solid var(--bd);
+    transition:border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+  }
+  .agent::before{content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+    background:linear-gradient(180deg, rgba(37,211,102,.06), transparent 40%); opacity:0; transition:opacity .18s ease}
+  .agent:hover{border-color:var(--bd-hi); transform:translateY(-4px);
+    box-shadow:0 22px 46px -22px rgba(0,0,0,.8), 0 0 0 1px rgba(37,211,102,.10)}
+  .agent:hover::before{opacity:1}
+  .agent:focus-visible{outline:2px solid var(--wa); outline-offset:3px}
+
+  .a-top{display:flex; align-items:center; gap:14px}
+  .a-ic{width:46px; height:46px; flex:none; border-radius:13px; display:grid; place-items:center;
+    background:var(--wa); box-shadow:0 8px 22px -8px rgba(37,211,102,.6)}
+  .a-ic svg{width:26px; height:26px}
+  .a-name{font-family:var(--head); font-weight:700; font-size:1.28rem; line-height:1.1}
+  .a-role{color:var(--muted2); font-size:.78rem; font-weight:600; letter-spacing:1.2px; text-transform:uppercase; margin-top:2px}
+
+  .a-num{font-size:1.06rem; font-weight:600; color:var(--text); letter-spacing:.2px; font-variant-numeric:tabular-nums}
+
+  .a-btn{margin-top:2px; display:flex; align-items:center; justify-content:center; gap:9px;
+    padding:12px; border-radius:11px; background:var(--wa); color:var(--wa-ink);
+    font-family:var(--head); font-weight:700; font-size:.92rem;
+    transition:filter .18s ease}
+  .agent:hover .a-btn{filter:brightness(1.08)}
+  .a-btn svg{width:18px; height:18px}
+
+  /* ---- rodape ---- */
+  footer{display:flex; flex-direction:column; align-items:center; gap:14px; text-align:center;
+    padding-top:8px; border-top:1px solid var(--bd)}
+  .help{display:flex; flex-wrap:wrap; justify-content:center; gap:8px}
+  .chip{font-size:.82rem; color:var(--muted); border:1px solid var(--bd); border-radius:100px; padding:6px 13px}
+  .hours{color:var(--muted2); font-size:.86rem}
+  .hours b{color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><span class="dot"></span><b>OVERISE</b></div>
+    <span class="eyebrow">Suporte oficial</span>
+    <h1>Fale com o <span>suporte</span></h1>
+    <p class="lead">Atendimento humano no WhatsApp. Escolhe um atendente e chama na hora.</p>
+  </header>
+
+  <main class="team">
+    <a class="agent" href="https://wa.me/559391026080?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20com%20a%20OVERISE." target="_blank" rel="noopener">
+      <div class="a-top">
+        <span class="a-ic"><svg viewBox="0 0 24 24" fill="#04140a"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.16c-.24.68-1.42 1.32-1.96 1.36-.5.04-.5.4-3.15-.66-2.66-1.05-4.32-3.76-4.45-3.93-.13-.17-1.06-1.41-1.06-2.69 0-1.28.67-1.91.91-2.17.24-.26.52-.33.7-.33.17 0 .35 0 .5.01.16.01.38-.06.59.45.22.52.74 1.8.8 1.93.07.13.11.28.02.45-.09.17-.13.28-.26.43-.13.15-.28.34-.4.45-.13.13-.27.28-.12.54.15.26.67 1.1 1.44 1.79.99.88 1.82 1.15 2.08 1.28.26.13.41.11.56-.07.15-.17.65-.76.82-1.02.17-.26.35-.22.59-.13.24.09 1.52.72 1.78.85.26.13.43.19.5.3.07.11.07.64-.17 1.32z"/></svg></span>
+        <div><div class="a-name">Leo</div><div class="a-role">Atendimento</div></div>
+      </div>
+      <div class="a-num">+55 93 9102-6080</div>
+      <div class="a-btn"><svg viewBox="0 0 24 24" fill="#04140a"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.16c-.24.68-1.42 1.32-1.96 1.36-.5.04-.5.4-3.15-.66-2.66-1.05-4.32-3.76-4.45-3.93-.13-.17-1.06-1.41-1.06-2.69 0-1.28.67-1.91.91-2.17.24-.26.52-.33.7-.33.17 0 .35 0 .5.01.16.01.38-.06.59.45.22.52.74 1.8.8 1.93.07.13.11.28.02.45-.09.17-.13.28-.26.43-.13.15-.28.34-.4.45-.13.13-.27.28-.12.54.15.26.67 1.1 1.44 1.79.99.88 1.82 1.15 2.08 1.28.26.13.41.11.56-.07.15-.17.65-.76.82-1.02.17-.26.35-.22.59-.13.24.09 1.52.72 1.78.85.26.13.43.19.5.3.07.11.07.64-.17 1.32z"/></svg> Chamar no WhatsApp</div>
+    </a>
+
+    <a class="agent" href="https://wa.me/5511931500166?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20com%20a%20OVERISE." target="_blank" rel="noopener">
+      <div class="a-top">
+        <span class="a-ic"><svg viewBox="0 0 24 24" fill="#04140a"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.16c-.24.68-1.42 1.32-1.96 1.36-.5.04-.5.4-3.15-.66-2.66-1.05-4.32-3.76-4.45-3.93-.13-.17-1.06-1.41-1.06-2.69 0-1.28.67-1.91.91-2.17.24-.26.52-.33.7-.33.17 0 .35 0 .5.01.16.01.38-.06.59.45.22.52.74 1.8.8 1.93.07.13.11.28.02.45-.09.17-.13.28-.26.43-.13.15-.28.34-.4.45-.13.13-.27.28-.12.54.15.26.67 1.1 1.44 1.79.99.88 1.82 1.15 2.08 1.28.26.13.41.11.56-.07.15-.17.65-.76.82-1.02.17-.26.35-.22.59-.13.24.09 1.52.72 1.78.85.26.13.43.19.5.3.07.11.07.64-.17 1.32z"/></svg></span>
+        <div><div class="a-name">Victor</div><div class="a-role">Atendimento</div></div>
+      </div>
+      <div class="a-num">+55 11 93150-0166</div>
+      <div class="a-btn"><svg viewBox="0 0 24 24" fill="#04140a"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.16c-.24.68-1.42 1.32-1.96 1.36-.5.04-.5.4-3.15-.66-2.66-1.05-4.32-3.76-4.45-3.93-.13-.17-1.06-1.41-1.06-2.69 0-1.28.67-1.91.91-2.17.24-.26.52-.33.7-.33.17 0 .35 0 .5.01.16.01.38-.06.59.45.22.52.74 1.8.8 1.93.07.13.11.28.02.45-.09.17-.13.28-.26.43-.13.15-.28.34-.4.45-.13.13-.27.28-.12.54.15.26.67 1.1 1.44 1.79.99.88 1.82 1.15 2.08 1.28.26.13.41.11.56-.07.15-.17.65-.76.82-1.02.17-.26.35-.22.59-.13.24.09 1.52.72 1.78.85.26.13.43.19.5.3.07.11.07.64-.17 1.32z"/></svg> Chamar no WhatsApp</div>
+    </a>
+
+    <a class="agent" href="https://wa.me/5568996081689?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20com%20a%20OVERISE." target="_blank" rel="noopener">
+      <div class="a-top">
+        <span class="a-ic"><svg viewBox="0 0 24 24" fill="#04140a"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.16c-.24.68-1.42 1.32-1.96 1.36-.5.04-.5.4-3.15-.66-2.66-1.05-4.32-3.76-4.45-3.93-.13-.17-1.06-1.41-1.06-2.69 0-1.28.67-1.91.91-2.17.24-.26.52-.33.7-.33.17 0 .35 0 .5.01.16.01.38-.06.59.45.22.52.74 1.8.8 1.93.07.13.11.28.02.45-.09.17-.13.28-.26.43-.13.15-.28.34-.4.45-.13.13-.27.28-.12.54.15.26.67 1.1 1.44 1.79.99.88 1.82 1.15 2.08 1.28.26.13.41.11.56-.07.15-.17.65-.76.82-1.02.17-.26.35-.22.59-.13.24.09 1.52.72 1.78.85.26.13.43.19.5.3.07.11.07.64-.17 1.32z"/></svg></span>
+        <div><div class="a-name">Wl</div><div class="a-role">Atendimento</div></div>
+      </div>
+      <div class="a-num">+55 68 99608-1689</div>
+      <div class="a-btn"><svg viewBox="0 0 24 24" fill="#04140a"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.16c-.24.68-1.42 1.32-1.96 1.36-.5.04-.5.4-3.15-.66-2.66-1.05-4.32-3.76-4.45-3.93-.13-.17-1.06-1.41-1.06-2.69 0-1.28.67-1.91.91-2.17.24-.26.52-.33.7-.33.17 0 .35 0 .5.01.16.01.38-.06.59.45.22.52.74 1.8.8 1.93.07.13.11.28.02.45-.09.17-.13.28-.26.43-.13.15-.28.34-.4.45-.13.13-.27.28-.12.54.15.26.67 1.1 1.44 1.79.99.88 1.82 1.15 2.08 1.28.26.13.41.11.56-.07.15-.17.65-.76.82-1.02.17-.26.35-.22.59-.13.24.09 1.52.72 1.78.85.26.13.43.19.5.3.07.11.07.64-.17 1.32z"/></svg> Chamar no WhatsApp</div>
+    </a>
+  </main>
+
+  <footer>
+    <div class="help">
+      <span class="chip">Desbloqueio</span>
+      <span class="chip">Instalação</span>
+      <span class="chip">Erros e correções</span>
+    </div>
+    <p class="hours">Atendimento de <b>segunda a domingo</b>. Aos domingos, das <b>08h às 16h</b>. Qualquer um dos atendentes resolve, é o mesmo time.</p>
+  </footer>
+</div>
+</body>
+</html>
